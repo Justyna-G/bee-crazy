@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bee-crazy</title>
+</head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+
+
+    .meadow {
+        width: 100%;
+        height: 100vh;
+        background-image: url(wild-flowers-3592934_1920.jpg);
+
+    }
+
+    .counter {
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+        animation: start 3s linear;
+    }
+
+    .counter span {
+        font-size: 50px;
+        color: white;
+        position: absolute;
+        width: 100%;
+    }
+
+    span:nth-last-of-type(1) {
+        opacity: 0;
+        animation: start 1s linear;
+    }
+
+    span:nth-last-of-type(2) {
+        opacity: 0;
+        animation: start 1s 1s linear;
+    }
+
+    span:nth-last-of-type(3) {
+        opacity: 0;
+        animation: start 1s 2s linear;
+    }
+
+    .bee {
+        width: 150px;
+        height: 150px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-image: url(bee-2026963_640.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        animation: fly 3s 3.2s linear infinite;
+        opacity: 0;
+    }
+
+
+    @keyframes start {
+        0% {
+            opacity: 0;
+            transform: scale(1);
+        }
+
+        30% {
+            opacity: 1;
+            transform: scale(2);
+        }
+
+
+        90% {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        100% {
+            opacity: 0;
+        }
+    }
+
+    @keyframes fly {
+        0% {
+            opacity: .5;
+        }
+
+        10% {
+            top: calc(10% + 150px / 2);
+            left: 50%;
+            width: 15%;
+            opacity: 1;
+        }
+
+        20% {
+            top: calc(0% + 150px / 2);
+            left: calc(0% + 150px / 2);
+            width: 7%;
+            opacity: 1;
+        }
+
+        30% {
+            top: calc(100% - 150px / 2);
+            left: calc(60% - 150px / 2);
+            width: 10%;
+            opacity: 1;
+        }
+
+        40% {
+            top: calc(60% - 150px / 2);
+            left: calc(100% - 150px / 2);
+            width: 5%;
+            opacity: 1;
+        }
+
+        50% {
+            top: calc(0% + 150px / 2);
+            left: calc(70% - 150px / 2);
+            width: 10%;
+            opacity: 1;
+        }
+
+        60% {
+            top: calc(100% - 150px / 2);
+            left: calc(0% + 150px / 2);
+            width: 15%;
+            opacity: 1;
+        }
+
+        70% {
+            top: calc(30% - 150px / 2);
+            left: calc(20% - 150px / 2);
+            width: 7%;
+            opacity: 1;
+        }
+
+        80% {
+            top: calc(15% - 150px / 2);
+            left: calc(100% - 150px / 2);
+            width: 10%;
+            opacity: 1;
+        }
+
+        90% {
+            top: calc(80% - 150px / 2);
+            left: calc(80% - 150px / 2);
+            width: 5%;
+            opacity: 1;
+        }
+    }
+</style>
+
+<body>
+    <div class="meadow">
+        <div class="counter">
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+        </div>
+        <div class="bee"></div>
+    </div>
+
+
+
+
+</body>
+
+</html>
